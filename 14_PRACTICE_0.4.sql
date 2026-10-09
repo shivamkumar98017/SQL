@@ -166,4 +166,12 @@ from `e1.customers` as c
 
 F --> Female
 M  --> Male
-
+select
+   CustomerID,
+   Name,
+   Gender, 
+   case
+      when Gender = "M" then "Male"
+      else "Female"
+   end as Gender_New 
+from `e1.customers` 
