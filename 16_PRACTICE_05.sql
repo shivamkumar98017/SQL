@@ -369,3 +369,116 @@ group by
   e.Name
 having sum(oi.Total) > 75000
 order by sum(oi.Total) desc
+
+
+--Find products whose MRP is greater than the average MRP of all products.
+
+--Display:
+--ProductID --> product
+--ProductName --> product
+--CategoryName --> category
+--MRP --> product
+
+--Sort from highest MRP to lowest.
+select 
+  p.ProductID,
+  p.ProductName,
+  c.categoryName,
+  p.MRP   
+from `e1.products` as p    
+inner join `e1.categories` as c  
+on c.categoryID = p.CategoryID  
+where p.MRP > (
+               select 
+               avg(MRP) as avg_mrp
+               from `e1.products` 
+              )             
+order by p.MRP desc  
+
+
+--For each warehouse, calculate total stock and classify the warehouse as:
+
+--High Stock → total stock >= 5,000
+--Medium Stock → total stock >= 2,500
+--Low Stock → total stock < 2,500
+--Display:
+--WarehouseID --> warehouse
+--Warehouse name --> warehouse
+--Total stock --> inventory
+--Average stock --> inventory
+--Stock classification --> case when on stock column --> inventory
+--Sort warehouses by total stock descending.
+select
+   w.WarehouseID,
+   w.WarehouseName, 
+   sum(i.Stock) as total_stock,
+   round(avg(i.Stock),2) as avg_stock,
+case 
+ when sum(i.Stock) >= 5000 then "High Stock"
+ when sum(i.Stock) >= 2500 then "Medium Stock"
+ else "Low Stock"
+end as StockClassification 
+from `e1.warehouses` as w    
+inner join `e1.inventory` as i 
+on i.WarehouseID = w.WarehouseID
+group by 
+  w.WarehouseID,
+ w.WarehouseName
+order by sum(i.Stock) desc 
+
+
+
+--Find customers who have placed orders on more than 2 different order dates.
+
+--Display:
+--CustomerID --> customers
+--CustomerName --> customers
+--Number of different order dates --> orders
+--Total number of orders --> orders
+--Total quantity purchased --> order_items
+--Sort by number of different order dates from highest to lowest.--> distinct order_date
+select 
+  c.CustomerID,
+  c.Name,
+  count(distinct o.OrderDate) diff_ord_dates,
+  count(distinct o.OrderID) as total_orders,
+  sum(oi.Quantity) as total_qty
+from `e1.customers` as c    
+inner join `e1.orders` as o   
+on c.CustomerID = o.CustomerID
+inner join `e1.order_items` as oi 
+on oi.OrderID = o.OrderID
+group by 
+  c.CustomerID,
+  c.Name
+having count(distinct o.OrderDate) > 2  
+order by count(distinct o.OrderDate) desc
+
+
+
+--For each category, find the product having the highest MRP.
+--Display:
+--CategoryName --> category
+--ProductID --> product
+--ProductName --> product
+--MRP --> product
+--Sort categories alphabetically
+
+select 
+ c.categoryName,
+ p.ProductID,
+ p.ProductName,
+ p.MRP
+from `e1.categories` as c     
+inner join `e1.products` as p    
+on c.categoryID = p.CategoryID  
+where p.MRP = (
+               select max(p2.MRP)
+               from `e1.products` as p2
+               where p2.CategoryID = p.CategoryID            
+)
+order by c.categoryName 
+
+
+
+
