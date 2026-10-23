@@ -460,7 +460,7 @@ w.WarehouseName
 select
   c.CategoryID,
   c.CategoryName,
-round(avg(p.SellingPrice)) as avg_sp
+  round(avg(p.SellingPrice)) as avg_sp
 from e1.categories as c
 inner join e1.products as p
   on p.CategoryID = c.CategoryID
