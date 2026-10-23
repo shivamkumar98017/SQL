@@ -470,3 +470,22 @@ group by
 order by avg_sp desc
 limit 1
 
+
+--For every supplier, rank their products according to selling price, from highest to lowest.
+
+--Display:
+--Supplier name
+--Product name
+--Selling price
+--Rank within supplier
+
+select
+  s.SupplierName,
+  p.ProductName,
+  p.SellingPrice,
+  rank() over (partition by s.SupplierID order by p.SellingPrice desc) as selling_rank
+from `e1.suppliers` as s     
+inner join `e1.products` as p     
+  on s.SupplierID = p.SupplierID
+
+
