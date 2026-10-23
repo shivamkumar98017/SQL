@@ -328,3 +328,145 @@ having total_sales > 200000
 order by total_sales desc
 
 
+--The CRM team wants to understand the sequence in which customers placed their orders.
+
+--For every order, display:
+--CustomerID --> customer
+--OrderID --> orders
+--OrderDate --> orders
+--The order number for that customer
+--For example:
+--Customer C001
+--First order → 1
+--Second order → 2
+--Third order → 3
+--The numbering should be based on OrderDate, from oldest to newest
+SELECT 
+  c.CustomerID,
+  o.OrderID,
+  o.OrderDate,
+  ROW_NUMBER() OVER (
+    PARTITION BY c.CustomerID 
+    ORDER BY o.OrderDate ASC
+  ) AS OrderSequence
+FROM `e1.customers` AS c
+INNER JOIN `e1.orders` AS o    
+  ON c.CustomerID = o.CustomerID
+ORDER BY c.CustomerID, o.OrderDate ASC
+
+
+
+--Find the total amount successfully paid by each customer.
+--Display:
+--CustomerID --> customers
+--Customer name --> customers
+--Number of successful payments --> payments
+--Total successful payment amount --> payments
+--customers --> orders --> payments
+--Show only customers whose successful payment amount is greater than ₹50,000. --> having
+select 
+  c.CustomerID,
+  c.Name,
+  count(p.PaymentID) as no_of_payments,
+  sum(p.Amount) as Total_amt
+from `e1.customers` as c
+inner join `e1.orders` as o     
+  on c.CustomerID = o.CustomerID
+inner join `e1.payments` as p    
+  on p.OrderID = o.OrderID
+where p.Status = "success"
+group by 
+  c.CustomerID,
+  c.Name
+having sum(p.Amount) > 50000  
+order by sum(p.Amount) desc
+
+
+--For each category, calculate:
+--Category name --> category
+--Number of products --> products
+--Average MRP --> products
+--Average selling price --> products
+--Average discount amount --> mrp - sp --> products
+--Consider:
+--Discount = MRP - SellingPrice
+--Display categories with at least 5 products, --> having
+select 
+  c.categoryName,
+  count(p.ProductID) as no_of_prds,
+  round(avg(p.MRP),2) as avg_mrp,
+  round(avg(p.SellingPrice),2) as avg_sp,
+  round(avg(p.MRP-p.SellingPrice),2) as avg_dis_amt,
+from `e1.categories` as c     
+inner join `e1.products` as p 
+on c.categoryID = p.CategoryID
+group by 
+  c.categoryName
+having  count(p.ProductID) >= 5  
+order by avg_mrp desc
+
+
+--For every supplier, calculate:
+--Supplier name
+--Number of products supplied
+--Number of order-item records
+--Total quantity sold
+--Total sales value
+--Include suppliers even if they currently have no sales.
+--Sort by total sales from highest to lowest
+select
+  s.SupplierName,
+  count(distinct p.ProductID) as no_of_prds,
+  count(oi.OrderItemID) as no_of_oi_recors,
+  coalesce(sum(oi.Quantity),0) as total_qnty,
+  coalesce(sum(oi.Total),2) as total_sales
+from `e1.suppliers` as s     
+left join `e1.products` as p     
+  on p.SupplierID = s.SupplierID
+left join `e1.order_items` as oi   
+  on oi.ProductID = p.ProductID 
+group by 
+  s.SupplierName
+order by total_sales desc
+
+
+
+--For every warehouse, calculate:
+--Warehouse name
+--Number of orders handled
+--Total inventory stock
+--Average inventory stock
+--include warehouses even if they have no orders.
+select 
+  w.WarehouseName,
+  count(distinct o.OrderID) as no_of_orders,
+  coalesce(sum(i.Stock),0) as total_inve,
+  coalesce(round(avg(i.Stock),2),0) as avg_inve,
+from `e1.warehouses` as w    
+left join `e1.orders` as o     
+ on w.WarehouseID = o.WarehouseID
+left join `e1.inventory` as i     
+ on i.WarehouseID = w.WarehouseID
+group by 
+w.WarehouseName 
+
+
+--Find the category whose products have the highest average selling price.
+
+--Display:
+--CategoryID
+--CategoryName
+--Average selling price
+select
+  c.CategoryID,
+  c.CategoryName,
+round(avg(p.SellingPrice)) as avg_sp
+from e1.categories as c
+inner join e1.products as p
+  on p.CategoryID = c.CategoryID
+group by
+  c.CategoryID,
+  c.CategoryName
+order by avg_sp desc
+limit 1
+
