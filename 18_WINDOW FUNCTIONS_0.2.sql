@@ -106,3 +106,11 @@ order by sales_month
 
 
 select DATE_DIFF(DATE '2024-01-20', DATE '2024-01-10', DAY) as day_diff
+
+
+How many days has each customer been registered?
+select
+CustomerID,
+SignupDate,
+DATE_DIFF(current_date(), SignupDate,DAY) as days
+from `e1.customers`
