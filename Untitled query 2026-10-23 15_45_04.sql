@@ -1,0 +1,108 @@
+date --> 2024-01-15
+yyyy-mm-dd
+
+select current_date() as today
+
+
+--show the details of the customers who have joined in the recent 1000 days
+select 
+  Name,
+  SignupDate
+from `e1.customers`
+where SignupDate >= date_sub(current_date(),interval 1000 day)
+
+
+select
+OrderID,
+OrderDate,
+extract (year from OrderDate) as order_year
+from `e1.orders`
+
+
+
+select
+OrderID,
+OrderDate,
+extract (month from OrderDate) as order_month
+from `e1.orders`
+
+
+select
+OrderID,
+OrderDate,
+extract (day from OrderDate) as order_day
+from `e1.orders`
+
+
+select
+OrderID,
+OrderDate,
+extract (year from OrderDate) as order_year,
+extract (month from OrderDate) as order_month,
+extract (day from OrderDate) as order_day
+from `e1.orders`
+
+
+--How many orders were placed in each year?
+select
+  extract(year from OrderDate) as order_year,
+  count(*) as no_of_orders
+from `e1.orders`
+group by Order_year
+order by order_year desc
+
+
+--How many orders were placed in each month?
+select
+extract(month from OrderDate) as order_month,
+count(*) as no_of_orders
+from `e1.orders`
+group by order_month
+order by order_month desc
+
+
+select
+extract(year from OrderDate) as order_year,
+extract(month from OrderDate) as order_month,
+count(*) as no_of_orders
+from `e1.orders`
+group by
+  order_month,
+  order_year
+order by order_year desc,order_month desc
+
+
+
+date1 = 2024-03-15
+date_trunc('2024-0315',month)
+
+
+select
+  OrderDate,
+  date_trunc(OrderDate,Month)
+from `e1.orders`
+
+
+
+select
+ OrderDate,
+ date_trunc(OrderDate,year) 
+from `e1.orders`
+
+
+
+--What were the total sales for each month?
+select
+  date_trunc(OrderDate,Month) as sales_month,
+  sum(oi.Total) as total_sales
+from `e1.orders` as o     
+inner join `e1.order_items` as oi   
+  on oi.OrderID = o.OrderID
+group by sales_month
+order by sales_month  
+
+
+
+
+
+select DATE_DIFF(DATE '2024-01-20', DATE '2024-01-10', DAY) as day_diff
