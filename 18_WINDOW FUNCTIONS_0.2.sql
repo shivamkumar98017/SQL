@@ -114,3 +114,67 @@ CustomerID,
 SignupDate,
 DATE_DIFF(current_date(), SignupDate,DAY) as days
 from `e1.customers`
+
+
+--Find customers who have placed at least 5 orders.
+--Display:
+--CustomerID --> customers
+--Customer name --> customers
+--City --> customers
+--Number of orders --> orders
+select
+  c.CustomerID,
+  c.Name,
+  c.City,
+  count(distinct o.OrderID) as no_of_orders
+from `e1.customers` as c   
+inner join `e1.orders` as o    
+  on o.CustomerID = c.CustomerID
+group by 
+  c.CustomerID,
+  c.Name,
+  c.City
+having count(distinct o.OrderID) > 5 
+order by count(distinct o.OrderID) desc
+
+
+--For every customer, number their orders chronologically.
+--Display:
+--CustomerID
+--OrderID
+--OrderDate
+--Order number
+--For example:
+--Customer C001
+--Order O001 → 1
+--Order O005 → 2
+--Order O010 → 3
+select
+  CustomerID,
+  OrderID,
+  OrderDate,
+  row_number() over(partition by CustomerID order by OrderDate,OrderID) as order_number
+from `e1.orders`
+
+
+--Find the number of orders placed on Saturday and Sunday.
+--Display:
+--Day name
+--Number of orders
+select format_date('%A',DATE '2026-09-10')
+select extract(DAYOFWEEK FROM DATE '2026-09-10')
+
+
+select
+  format_date('%A',OrderDate)as day_name,
+  count(*) as order_count
+from `e1.orders`
+where extract (DAYOFWEEK from orderDate) in (1,7)
+group by day_name
+order by order_count desc 
+
+
+--%A → Full weekday name (Monday, Tuesday, Wednesday...)
+--%a → Short weekday name (Mon, Tue, Wed...)
+--%B → Full month name (January, February...)
+ 
