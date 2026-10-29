@@ -177,4 +177,46 @@ order by order_count desc
 --%A → Full weekday name (Monday, Tuesday, Wednesday...)
 --%a → Short weekday name (Mon, Tue, Wed...)
 --%B → Full month name (January, February...)
+
+
+--Classify every order as:
+--Weekend
+--Weekday
+--Then count the orders in each group.
+ 
+select
+case
+ when extract(DAYOFWEEK from OrderDate) in (1,7) then 'weekend'
+ else 'Weekday'     
+end as Day_type,
+count(*) as order_count 
+from `e1.orders`
+group by Day_type
+
+
+--Find how many customers signed up in each calendar month,irrespective of the year.
+--For example, combine all January signups together.
+select
+ extract(month from signupdate) as signup_month,
+ format_date('%B',signupdate) as Month_Name,
+ count(*) as customer_counts
+from `e1.customers`
+group by
+ signup_month,
+ Month_Name
+
+
+--Classify every order as:
+--First Half → January to June
+--Second Half → July to December
+--Then count orders.
+select
+case
+ when extract(month from orderdate) <= 6 then "First Half"
+ else "Second Half"
+end as year_type,
+count(*) as no_of_orders 
+from `e1.orders`
+group by year_type
+
  
