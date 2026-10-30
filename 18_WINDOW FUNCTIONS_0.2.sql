@@ -244,3 +244,52 @@ from `e1.customers`
 group by day_num,day_name
 order by no_of_signup desc
 
+
+--Find how many orders were placed during the first seven days of each month.
+select
+  date_trunc(OrderDate,MONTH) as order_month,
+  count(*) as no_of_orders
+from `e1.orders`
+where extract(DAY from orderdate)<= 7
+group by order_month
+
+
+select
+Date_trunc(OrderDate, MONTH) as order_month,
+format_date('%B', OrderDate) as month_name,
+count(*) as no_of_orders
+from `e1.orders`
+where extract(DAY from orderDate) <= 7
+group by order_month, month_name
+
+
+
+--Find customers who placed their first order in the same calendar month and year in which they signed up.
+with first_orders as (
+select
+CustomerID,
+min(orderdate) as first_order_date
+from `e1.orders`
+group by CustomerID
+)
+
+
+select
+c.CustomerID,
+c.Name,
+c.SignupDate,
+f.first_order_date
+from `e1.customers` as c
+inner join first_orders as f
+on c.CustomerID = f.customerID
+where
+date_trunc(c.SignupDate, MONTH) =
+date_trunc(f.first_order_date, MONTH)
+order by c.SignupDate
+
+
+--Calculate total sales for each calendar week
+--Group customers into signup cohorts based on the month in which they registered.
+--Display:
+--Signup month
+--Number of customers
