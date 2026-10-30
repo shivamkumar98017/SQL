@@ -220,3 +220,27 @@ from `e1.orders`
 group by year_type
 
  
+--Calculate total sales for orders placed in the first half and second half of the year.
+
+select
+ case 
+  when extract(MONTH from orderdate)<=6 then "First Half"
+  else "Second Half"
+end as year_type,
+  sum(oi.Total) as total_sales    
+from `e1.orders` as o
+inner join `e1.order_items` as oi    
+  on o.OrderID = oi.OrderID
+group by year_type
+order by total_sales desc  
+
+
+--Find which day of the week has the highest number of customer signups.
+select
+ extract(DAYOFWEEK from signupdate) as day_num,
+ format_date('%A',signupdate) as day_name,
+ count(*) as no_of_signup
+from `e1.customers` 
+group by day_num,day_name
+order by no_of_signup desc
+
