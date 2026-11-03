@@ -1,4 +1,4 @@
-# SQL Practice Repository 🗄️
+# SQL Practice Repository 🧱
 
 Personal practice repository for learning and revising **SQL** through hands-on queries focused on data analysis and business use-cases.
 
@@ -14,21 +14,24 @@ This repository contains well-organized SQL files covering essential to intermed
 
 | # | Topic | File |
 |---|-------|------|
-| 01 | SELECT Statement | `01_select statement.sql` |
-| 02 | Filtering with WHERE | `02_Filtering with WHERE .sql` |
-| 03 | SUM & COUNT | `03_Sum and Count.sql` |
-| 04 | Aggregate Functions + GROUP BY | `04_Aggregate Functions and GROUP BY.sql` |
-| 05 | GROUP BY | `05_GROUP BY.sql` |
-| 06 | ORDER BY | `06_ORDER BY.sql` |
-| 07 | HAVING | `07_HAVING.sql` |
-| 08-10 | Practice Sets | `08` to `10_PRACTICE` |
-| 11 | IN Operator | `11_IN.sql` |
-| 12 | INNER JOIN | `12_INNER JOIN.sql` |
-| 13 | LEFT & RIGHT JOIN | `13_LEFT AND RIGHT JOIN.sql` |
-| 14 | Practice | `14_PRACTICE_0.4.sql` |
-| 15 | IF-ELSEIF-ELSE | `15_IF-ELSEIF-ELSE .sql` |
-| 16 | Advanced Practice | `16_PRACTICE_05.sql` |
-| 17-18 | Window Functions | `17` & `18_WINDOW FUNCTIONS` |
+| 01 | SELECT Statement | `01_select.sql` |
+| 02 | Filtering with WHERE | `02_filtering_where.sql` |
+| 03 | SUM & COUNT | `03_sum_count.sql` |
+| 04 | Aggregate Functions + GROUP BY | `04_aggregate_groupby.sql` |
+| 05 | GROUP BY | `05_groupby.sql` |
+| 06 | ORDER BY | `06_orderby.sql` |
+| 07 | HAVING | `07_having.sql` |
+| 08 | Practice 01 | `08_practice_01.sql` |
+| 09 | Practice 02 | `09_practice_02.sql` |
+| 10 | Practice 03 | `10_practice_03.sql` |
+| 11 | IN Operator | `11_in_operator.sql` |
+| 12 | INNER JOIN | `12_inner_join.sql` |
+| 13 | LEFT & RIGHT JOIN | `13_left_right_join.sql` |
+| 14 | Practice 04 | `14_practice_04.sql` |
+| 15 | IF-ELSEIF-ELSE | `15_if_elseif_else.sql` |
+| 16 | Practice 05 | `16_practice_05.sql` |
+| 17 | Window Functions 01 | `17_window_functions_01.sql` |
+| 18 | Window Functions 02 | `18_window_functions_02.sql` |
 
 ---
 
@@ -36,22 +39,24 @@ This repository contains well-organized SQL files covering essential to intermed
 
 ```text
 SQL/
-├── 01_select statement.sql
-├── 02_Filtering with WHERE .sql
-├── 03_Sum and Count.sql
-├── 04_Aggregate Functions and GROUP BY.sql
-├── 05_GROUP BY.sql
-├── 06_ORDER BY.sql
-├── 07_HAVING.sql
-├── 08 to 10 → Practice files
-├── 11_IN.sql
-├── 12_INNER JOIN.sql
-├── 13_LEFT AND RIGHT JOIN.sql
-├── 14_PRACTICE_0.4.sql
-├── 15_IF-ELSEIF-ELSE .sql
-├── 16_PRACTICE_05.sql
-├── 17_WINDOW FUNCTIONS_01.sql
-└── 18_WINDOW FUNCTIONS_0.2.sql
+├── 01_select.sql
+├── 02_filtering_where.sql
+├── 03_sum_count.sql
+├── 04_aggregate_groupby.sql
+├── 05_groupby.sql
+├── 06_orderby.sql
+├── 07_having.sql
+├── 08_practice_01.sql
+├── 09_practice_02.sql
+├── 10_practice_03.sql
+├── 11_in_operator.sql
+├── 12_inner_join.sql
+├── 13_left_right_join.sql
+├── 14_practice_04.sql
+├── 15_if_elseif_else.sql
+├── 16_practice_05.sql
+├── 17_window_functions_01.sql
+└── 18_window_functions_02.sql
 ```
 
 ---
