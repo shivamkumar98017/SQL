@@ -1,43 +1,97 @@
-# SQL Practice Repository
+# SQL Practice Repository 🗄️
 
-Personal practice repository for learning and revising SQL through hands-on queries.
+Personal practice repository for learning and revising **SQL** through hands-on queries focused on data analysis and business use-cases.
 
-## Topics Covered
+---
 
-| # | Topic                        | File                              |
-|---|------------------------------|-----------------------------------|
-| 1 | SELECT Statement             | `01_select statement.sql`         |
-| 2 | Filtering with WHERE         | `02_Filtering with WHERE .sql`    |
-| 3 | SUM & COUNT                  | `03_Sum and Count.sql`            |
-| 4 | Aggregate Functions + GROUP BY | `04_Aggregate Functions and GROUP BY.sql` |
-| 5 | GROUP BY                     | `05_GROUP BY.sql`                 |
-| 6 | ORDER BY                     | `06_ORDER BY.sql`                 |
-| 7 | HAVING                       | `07_HAVING.sql`                   |
-| 8 | Practice Sets                  | `08` to `10_PRACTICE`             |
-| 9 | IN Operator                  | `11_IN.sql`                       |
-|10 | INNER JOIN                   | `12_INNER JOIN.sql`               |
-|11 | LEFT & RIGHT JOIN            | `13_LEFT AND RIGHT JOIN.sql`      |
-|12 | Window Functions             | `17_WINDOW FUNCTIONS_01.sql`      |
-|13 | More Practice                | Remaining practice files          |
+## 📌 Overview
 
-## How to Use
+This repository contains well-organized SQL files covering essential to intermediate SQL concepts. Queries are written in a practical style suitable for data analysis and interviews.
 
-1. Clone the repository
+---
+
+## 📚 Topics Covered
+
+| # | Topic | File |
+|---|-------|------|
+| 01 | SELECT Statement | `01_select statement.sql` |
+| 02 | Filtering with WHERE | `02_Filtering with WHERE .sql` |
+| 03 | SUM & COUNT | `03_Sum and Count.sql` |
+| 04 | Aggregate Functions + GROUP BY | `04_Aggregate Functions and GROUP BY.sql` |
+| 05 | GROUP BY | `05_GROUP BY.sql` |
+| 06 | ORDER BY | `06_ORDER BY.sql` |
+| 07 | HAVING | `07_HAVING.sql` |
+| 08-10 | Practice Sets | `08` to `10_PRACTICE` |
+| 11 | IN Operator | `11_IN.sql` |
+| 12 | INNER JOIN | `12_INNER JOIN.sql` |
+| 13 | LEFT & RIGHT JOIN | `13_LEFT AND RIGHT JOIN.sql` |
+| 14 | Practice | `14_PRACTICE_0.4.sql` |
+| 15 | IF-ELSEIF-ELSE | `15_IF-ELSEIF-ELSE .sql` |
+| 16 | Advanced Practice | `16_PRACTICE_05.sql` |
+| 17-18 | Window Functions | `17` & `18_WINDOW FUNCTIONS` |
+
+---
+
+## 🗂️ Repository Structure
+
+```text
+SQL/
+├── 01_select statement.sql
+├── 02_Filtering with WHERE .sql
+├── 03_Sum and Count.sql
+├── 04_Aggregate Functions and GROUP BY.sql
+├── 05_GROUP BY.sql
+├── 06_ORDER BY.sql
+├── 07_HAVING.sql
+├── 08 to 10 → Practice files
+├── 11_IN.sql
+├── 12_INNER JOIN.sql
+├── 13_LEFT AND RIGHT JOIN.sql
+├── 14_PRACTICE_0.4.sql
+├── 15_IF-ELSEIF-ELSE .sql
+├── 16_PRACTICE_05.sql
+├── 17_WINDOW FUNCTIONS_01.sql
+└── 18_WINDOW FUNCTIONS_0.2.sql
+```
+
+---
+
+## 🚀 How to Use
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/shivamkumar98017/SQL.git
+   ```
 2. Open any `.sql` file
-3. Run the queries on your preferred database (MySQL / PostgreSQL / BigQuery etc.)
-4. Dataset used: E-commerce style tables (`customers`, `products`, `orders`, `order_items`, `payments`, `suppliers`, `categories`)
+3. Run the queries on your preferred database (MySQL / PostgreSQL / SQLite / BigQuery)
+4. Dataset style: E-commerce tables (`customers`, `products`, `orders`, `order_items`, etc.)
 
-> Note: Table names are prefixed with `e1.` (example: `e1.customers`). Adjust according to your schema.
+> **Note:** Some queries use table prefix `e1.` (example: `e1.customers`). Adjust according to your schema.
 
-## Learning Goal
+---
 
-Build strong foundation in:
-- Filtering & Aggregation
-- Multi-table JOINs
-- Window Functions
-- Business-oriented analytical queries
+## 🎯 Learning Goals
 
-## Author
+- Write efficient filtering and aggregation queries
+- Master multi-table JOINs
+- Understand Window Functions
+- Build ability to solve business-oriented analytical questions
+
+---
+
+## 🛠️ Tech Stack
+
+- SQL (MySQL / PostgreSQL compatible)
+- Focus on analytical queries
+
+---
+
+## 👤 Author
 
 **Shivam Kumar**  
-[GitHub](https://github.com/shivamkumar98017)
+AI/ML Enthusiast  
+[GitHub](https://github.com/shivamkumar98017) • [LinkedIn](https://www.linkedin.com/in/shivam-kumar-b24677431)
+
+---
+
+⭐ If you find this repository helpful, feel free to star it!
