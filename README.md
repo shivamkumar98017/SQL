@@ -1,12 +1,26 @@
-# SQL Practice 🧱
+# SQL Practice
 
-Personal practice repository for learning and revising **SQL** through hands-on analytical queries.
+A structured practice repository for developing proficiency in **SQL**, with emphasis on analytical queries commonly used in data analysis and business intelligence.
 
 ---
 
 ## Overview
 
-This repository contains well-organized SQL files covering essential to intermediate concepts. Focus is on practical, business-oriented queries useful for data analysis and interviews.
+This repository contains carefully organized SQL scripts covering foundational to intermediate concepts. The material is designed to build practical query-writing skills suitable for data analysis roles and technical interviews.
+
+Queries are written in a style compatible with major relational databases and focus on real-world analytical patterns.
+
+---
+
+## Learning Objectives
+
+By completing this repository, learners will be able to:
+
+- Write precise SELECT queries with appropriate filtering
+- Perform aggregations and grouping operations
+- Apply multi-table JOINs effectively
+- Use Window Functions for advanced analytical tasks
+- Solve business-oriented analytical problems using SQL
 
 ---
 
@@ -20,18 +34,13 @@ This repository contains well-organized SQL files covering essential to intermed
 | 04 | Aggregate Functions + GROUP BY | `04_aggregate_groupby.sql` |
 | 05 | GROUP BY | `05_groupby.sql` |
 | 06 | ORDER BY | `06_orderby.sql` |
-| 07 | HAVING | `07_having.sql` |
-| 08 | Practice 01 | `08_practice_01.sql` |
-| 09 | Practice 02 | `09_practice_02.sql` |
-| 10 | Practice 03 | `10_practice_03.sql` |
+| 07 | HAVING Clause | `07_having.sql` |
+| 08–10 | Practice Sets | `08_practice_01.sql` – `10_practice_03.sql` |
 | 11 | IN Operator | `11_in_operator.sql` |
 | 12 | INNER JOIN | `12_inner_join.sql` |
 | 13 | LEFT & RIGHT JOIN | `13_left_right_join.sql` |
-| 14 | Practice 04 | `14_practice_04.sql` |
-| 15 | IF-ELSEIF-ELSE | `15_if_elseif_else.sql` |
-| 16 | Practice 05 | `16_practice_05.sql` |
-| 17 | Window Functions 01 | `17_window_functions_01.sql` |
-| 18 | Window Functions 02 | `18_window_functions_02.sql` |
+| 14–16 | Additional Practice | `14_practice_04.sql` – `16_practice_05.sql` |
+| 17–18 | Window Functions | `17_window_functions_01.sql` – `18_window_functions_02.sql` |
 
 ---
 
@@ -67,36 +76,34 @@ SQL/
    ```bash
    git clone https://github.com/shivamkumar98017/SQL.git
    ```
-2. Open any `.sql` file
-3. Run the queries on your preferred database (MySQL / PostgreSQL / SQLite)
-4. Dataset style: E-commerce tables (`customers`, `products`, `orders`, `order_items`, etc.)
+2. Open the `.sql` files in any SQL client or notebook environment.
+3. Execute queries against a compatible database (MySQL, PostgreSQL, or SQLite).
+4. Dataset context: E-commerce schema (`customers`, `products`, `orders`, `order_items`, etc.).
 
-> **Note:** Some queries use table prefix `e1.` (example: `e1.customers`). Adjust according to your schema.
+> **Note:** Some queries reference tables with the prefix `e1.` (e.g., `e1.customers`). Adjust the schema name according to your environment.
 
 ---
 
-## Learning Goals
+## Recommended Prerequisites
 
-- Write efficient filtering and aggregation queries
-- Master multi-table JOINs
-- Understand Window Functions
-- Solve business-oriented analytical questions
+- Basic understanding of relational databases
+- Familiarity with tables, rows, and columns
 
 ---
 
 ## Tech Stack
 
 - SQL (MySQL / PostgreSQL compatible)
-- Focus on analytical queries
+- Focus on analytical and business-intelligence style queries
 
 ---
 
 ## Author
 
 **Shivam Kumar**  
-AI/ML Enthusiast  
+AI/ML Enthusiast | Aspiring Machine Learning Engineer  
 [GitHub](https://github.com/shivamkumar98017) • [LinkedIn](https://www.linkedin.com/in/shivam-kumar-b24677431)
 
 ---
 
-⭐ If you find this repository helpful, feel free to star it!
+*This repository is part of a structured learning path covering Python → SQL → NumPy → Pandas → Machine Learning.*
