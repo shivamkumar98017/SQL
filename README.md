@@ -1,16 +1,16 @@
-# SQL Practice Repository 🧱
+# SQL Practice 🧱
 
-Personal practice repository for learning and revising **SQL** through hands-on queries focused on data analysis and business use-cases.
-
----
-
-## 📌 Overview
-
-This repository contains well-organized SQL files covering essential to intermediate SQL concepts. Queries are written in a practical style suitable for data analysis and interviews.
+Personal practice repository for learning and revising **SQL** through hands-on analytical queries.
 
 ---
 
-## 📚 Topics Covered
+## Overview
+
+This repository contains well-organized SQL files covering essential to intermediate concepts. Focus is on practical, business-oriented queries useful for data analysis and interviews.
+
+---
+
+## Topics Covered
 
 | # | Topic | File |
 |---|-------|------|
@@ -35,7 +35,7 @@ This repository contains well-organized SQL files covering essential to intermed
 
 ---
 
-## 🗂️ Repository Structure
+## Repository Structure
 
 ```text
 SQL/
@@ -61,37 +61,37 @@ SQL/
 
 ---
 
-## 🚀 How to Use
+## How to Use
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/shivamkumar98017/SQL.git
    ```
 2. Open any `.sql` file
-3. Run the queries on your preferred database (MySQL / PostgreSQL / SQLite / BigQuery)
+3. Run the queries on your preferred database (MySQL / PostgreSQL / SQLite)
 4. Dataset style: E-commerce tables (`customers`, `products`, `orders`, `order_items`, etc.)
 
 > **Note:** Some queries use table prefix `e1.` (example: `e1.customers`). Adjust according to your schema.
 
 ---
 
-## 🎯 Learning Goals
+## Learning Goals
 
 - Write efficient filtering and aggregation queries
 - Master multi-table JOINs
 - Understand Window Functions
-- Build ability to solve business-oriented analytical questions
+- Solve business-oriented analytical questions
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - SQL (MySQL / PostgreSQL compatible)
 - Focus on analytical queries
 
 ---
 
-## 👤 Author
+## Author
 
 **Shivam Kumar**  
 AI/ML Enthusiast  
