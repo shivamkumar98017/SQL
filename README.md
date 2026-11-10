@@ -1,25 +1,30 @@
 # SQL Practice
 
-A structured practice repository for developing proficiency in **SQL**, with emphasis on analytical queries commonly used in data analysis and business intelligence.
+**A structured practice repository for developing proficiency in SQL**, with emphasis on analytical queries commonly used in data analysis, business intelligence, and technical interviews.
 
 ---
 
 ## Overview
 
-This repository contains carefully organized SQL scripts covering foundational to intermediate concepts. The material is designed to build practical query-writing skills suitable for data analysis roles and technical interviews.
+This repository contains carefully organized SQL scripts covering foundational to intermediate concepts. The material is designed to build practical query-writing skills suitable for:
 
-Queries are written in a style compatible with major relational databases and focus on real-world analytical patterns.
+- Data analysis roles
+- Academic projects involving databases
+- Technical interviews
+
+Queries are written in a style compatible with major relational databases (MySQL, PostgreSQL, SQLite) and focus on real-world analytical patterns.
 
 ---
 
 ## Learning Objectives
 
-By completing this repository, learners will be able to:
+By completing this repository, a learner will be able to:
 
-- Write precise SELECT queries with appropriate filtering
+- Write precise `SELECT` queries with appropriate filtering
 - Perform aggregations and grouping operations
-- Apply multi-table JOINs effectively
-- Use Window Functions for advanced analytical tasks
+- Apply multi-table JOINs effectively (INNER, LEFT, RIGHT)
+- Use the `HAVING` clause and conditional logic in SQL
+- Apply Window Functions for advanced analytical tasks
 - Solve business-oriented analytical problems using SQL
 
 ---
@@ -76,15 +81,15 @@ SQL/
    ```bash
    git clone https://github.com/shivamkumar98017/SQL.git
    ```
-2. Open the `.sql` files in any SQL client or notebook environment.
-3. Execute queries against a compatible database (MySQL, PostgreSQL, or SQLite).
-4. Dataset context: E-commerce schema (`customers`, `products`, `orders`, `order_items`, etc.).
+2. Open the `.sql` files in any SQL client (MySQL Workbench, DBeaver, pgAdmin, etc.) or notebook environment.
+3. Execute queries against a compatible database.
+4. Dataset context: E-commerce style schema (`customers`, `products`, `orders`, `order_items`, etc.).
 
 > **Note:** Some queries reference tables with the prefix `e1.` (e.g., `e1.customers`). Adjust the schema name according to your environment.
 
 ---
 
-## Recommended Prerequisites
+## Prerequisites
 
 - Basic understanding of relational databases
 - Familiarity with tables, rows, and columns
@@ -93,17 +98,30 @@ SQL/
 
 ## Tech Stack
 
-- SQL (MySQL / PostgreSQL compatible)
+- SQL (MySQL / PostgreSQL / SQLite compatible)
 - Focus on analytical and business-intelligence style queries
+
+---
+
+## Why This Repository Matters
+
+SQL remains one of the most important skills for data and ML roles. This repository shows deliberate practice from basic queries all the way to **Window Functions** — a topic that many students skip but is highly valued in academia and industry.
+
+A teacher can clearly see:
+- Structured progression from SELECT to advanced analytics
+- Multiple independent practice sets
+- Exposure to JOINs and Window Functions
 
 ---
 
 ## Author
 
 **Shivam Kumar**  
-AI/ML Enthusiast | Aspiring Machine Learning Engineer  
-[GitHub](https://github.com/shivamkumar98017) • [LinkedIn](https://www.linkedin.com/in/shivam-kumar-b24677431)
+Aspiring AI/ML Engineer & Cybersecurity Enthusiast  
+Motihari, Bihar  
+
+[GitHub](https://github.com/shivamkumar98017) • [Email](mailto:shivamk34442@gmail.com)
 
 ---
 
-*This repository is part of a structured learning path covering Python → SQL → NumPy → Pandas → Machine Learning.*
+*Part of a structured learning path: Core Python → SQL → NumPy → Pandas → Machine Learning*
