@@ -127,12 +127,4 @@ A teacher can clearly see:
 AI/ML Engineer • Cybersecurity Enthusiast  
 Motihari, Bihar
 
-[GitHub](https://github.com/shivamkumar98017) • [Email](mailto:shivamk34442@gmail.com) • [Instagram](https://www.instagram.com/shivamkumar98017/)
-
----
-
-## 🌐 Connect With Me
-
-- **Instagram:** [www.instagram.com/codes.flow](https://www.instagram.com/codes.flow/)
-- **LinkedIn:** [www.linkedin.com/in/shivam-kumar-b24677431](https://www.linkedin.com/in/shivam-kumar-b24677431/)
-- **X:** [x.com/shivamk344007](https://x.com/shivamk344007)
+[GitHub](https://github.com/shivamkumar98017) • [Instagram](https://www.instagram.com/shivamkumar98017/) • [LinkedIn](https://www.linkedin.com/in/shivam-kumar-b24677431/) • [X](https://x.com/shivamk344007) • [Email](mailto:shivamk34442@gmail.com)
